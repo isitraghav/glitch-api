@@ -51,14 +51,14 @@ app.get("/sheet/:eventname", async (req, res) => {
 
   // Check if this event's data is cached
   const cachedData = cache.get(eventName);
-  if (cachedData) {
-    return res.json({
-      source: "cache",
-      event: eventName,
-      data: cachedData.fullData,
-      top10: cachedData.top10,
-    });
-  }
+  // if (cachedData) {
+  //   return res.json({
+  //     source: "cache",
+  //     event: eventName,
+  //     data: cachedData.fullData,
+  //     top10: cachedData.top10,
+  //   });
+  // }
 
   try {
     // Create a Sheets API client using the API key
