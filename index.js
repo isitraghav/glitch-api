@@ -101,8 +101,10 @@ app.get("/sheet/:eventname", async (req, res) => {
 });
 
 // Start the Express server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (process.env.NODE_ENV === "development") {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
 
 module.exports = app;
